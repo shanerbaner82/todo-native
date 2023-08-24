@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', \App\Livewire\Todos\Index::class)->name('todos.index');
+Route::get('/todos/create', \App\Livewire\Todos\Create::class)->name('todos.create');
+Route::get('/todos/{todo}/edit', \App\Livewire\Todos\Update::class)->name('todos.edit');
+Route::get('/settings', \App\Livewire\Settings::class)->name('settings');
